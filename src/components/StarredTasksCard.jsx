@@ -34,8 +34,8 @@ function StarredTaskRow({ task, list, lists }) {
               updateTask({
                 listId: list.id,
                 taskId: task.id,
-                isCompleted: true,
-                isStarred: true,
+                isCompleted: task.isCompleted,
+                isStarred: task.isStarred,
               }),
             )
           }
@@ -83,7 +83,7 @@ function StarredTaskRow({ task, list, lists }) {
               updateTask({
                 listId: list.id,
                 taskId: task.id,
-                isStarred: true,
+                isStarred: task.isStarred,
               }),
             )
           }
