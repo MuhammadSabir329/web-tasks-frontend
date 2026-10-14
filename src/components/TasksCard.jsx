@@ -35,8 +35,8 @@ function TaskRow({ task, list, lists }) {
               updateTask({
                 listId: list.id,
                 taskId: task.id,
-                isCompleted: true,
-                isStarred: true,
+                isCompleted: task.isCompleted,
+                isStarred: task.isStarred,
               }),
             )
           }
@@ -99,7 +99,7 @@ function TaskRow({ task, list, lists }) {
           className="group relative text-[#c4c7c5] hover:bg-[#282a2c] p-1.5 rounded-full transition-colors hover:cursor-pointer"
           onClick={() =>
             dispatch(
-              updateTask({ listId: list.id, taskId: task.id, isStarred: true }),
+              updateTask({ listId: list.id, taskId: task.id, isStarred: task.isStarred }),
             )
           }
           onMouseDown={(e) => e.preventDefault()}
@@ -205,8 +205,8 @@ function CompletedTasks({
                             updateTask({
                               listId: list.id,
                               taskId: task.id,
-                              isCompleted: true,
-                              isStarred: true,
+                              isCompleted: task.isCompleted,
+                              isStarred: task.isStarred,
                             }),
                           )
                         }
